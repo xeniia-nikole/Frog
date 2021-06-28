@@ -1,11 +1,8 @@
 public class FrogCommands {
     public static FrogCommand jumpRightCommand(Frog frog, int steps) {
-        // возвращаете объект команды, у которого
-        // если вызвать .do(), то лягушка её выполнит,
-        // если вызвать .undo(), то лягушка её отменит
         FrogCommand frogCommand = new FrogCommand() {
             @Override
-            public boolean doIt() {
+            public boolean doCommand() {
                 if (frog.jump(steps)) {
                     return true;
                 } else {
@@ -14,7 +11,7 @@ public class FrogCommands {
             }
 
             @Override
-            public boolean undoIt() {
+            public boolean undoCommand() {
                 if (frog.jump(-steps)) {
                     return true;
                 } else {
@@ -26,12 +23,9 @@ public class FrogCommands {
     }
 
     public static FrogCommand jumpLeftCommand(Frog frog, int steps) {
-        // возвращаете объект команды, у которого
-        // если вызвать .do(), то лягушка её выполнит,
-        // если вызвать .undo(), то лягушка её отменит
         FrogCommand frogCommand = new FrogCommand() {
             @Override
-            public boolean doIt() {
+            public boolean doCommand() {
                 if (frog.jump(steps)) {
                     return true;
                 } else {
@@ -40,7 +34,7 @@ public class FrogCommands {
             }
 
             @Override
-            public boolean undoIt() {
+            public boolean undoCommand() {
                 if (frog.jump(-steps)) {
                     return true;
                 } else {

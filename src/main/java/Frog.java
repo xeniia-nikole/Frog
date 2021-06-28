@@ -7,9 +7,6 @@ public class Frog {
     public Frog() { position = 5; }
 
     public boolean jump(int steps) {
-        // сделаем прыжок, если прыжок слишком большой
-        // для поля, то не прыгнем и вернём false
-
             if ((steps >= 0) && ((position + steps) <= MAX_POSITION)) { // вправо
                 position += steps;
                 return true;
@@ -19,7 +16,7 @@ public class Frog {
                 return true;
 
             } else {
-                System.out.println(">> Прыжок больше лужи!");
+                System.out.println("~ Прыжок больше лужи!");
                 return false;
             }
     }
